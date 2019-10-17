@@ -1,7 +1,7 @@
 # TEC
 Send OTP and Verifies
 
-Database Script from here
+Database Script in DB.sql File
 
-Postman Request from here
+Postman Request in OTPService.postman_collection.json
 
