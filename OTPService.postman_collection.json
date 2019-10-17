@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "dbe5f9a2-01f1-4949-afac-c3932cda6477",
+		"name": "OTPService",
+		"description": "For Generating, SMSing, Resending and Verifying OTP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GenerateOTP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"UserName\":\"test\",\r\n\"IPAddress\":\"123.123.123.132\",\r\n\"Longitude\":\"123.34123213\",\r\n\"Latitude\":\"123.12342232\",\r\n\"ActionPageID\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44300/api/OTP/GenerateOTP",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44300",
+					"path": [
+						"api",
+						"OTP",
+						"GenerateOTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ResendOTP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44300/api/OTP/ResendOTP?username=test",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44300",
+					"path": [
+						"api",
+						"OTP",
+						"ResendOTP"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerifyOTP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44300/api/OTP/VerifyOTP?username=test&otp=0170",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44300",
+					"path": [
+						"api",
+						"OTP",
+						"VerifyOTP"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "test"
+						},
+						{
+							"key": "otp",
+							"value": "0170"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
